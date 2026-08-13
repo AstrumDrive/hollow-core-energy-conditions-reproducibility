@@ -11,7 +11,7 @@ authors:
     given-names: Ivaylo
 version: 1.0.0
 date-released: 2026-08-13
-repository-code: "https://github.com/xys004/hollow-core-energy-conditions-reproducibility"
+repository-code: "https://github.com/AstrumDrive/hollow-core-energy-conditions-reproducibility"
 license: "NOASSERTION"
 keywords:
   - general relativity

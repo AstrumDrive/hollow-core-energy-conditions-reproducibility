@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Reproducibility material for Boundary Constraints and Lapse Freedom in Static Spherical Hollow Sources"
+message: "If you use this material, please cite the accompanying manuscript and this repository release."
+type: software
+authors:
+  - family-names: Bolívar
+    given-names: Nelson
+  - family-names: Abellán
+    given-names: Gabriel
+  - family-names: Vasilev
+    given-names: Ivaylo
+version: 1.0.0
+date-released: 2026-08-13
+repository-code: "https://github.com/xys004/hollow-core-energy-conditions-reproducibility"
+license: "NOASSERTION"
+keywords:
+  - general relativity
+  - spherical sources
+  - energy conditions
+  - reproducibility

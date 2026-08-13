@@ -1,0 +1,464 @@
+{
+  "status": "PASS",
+  "claim": "For the stated admissible smooth regularizations, the densitized Einstein tensor has a mollifier-independent associated measure; its singular part is the tangential Israel layer.  This is not a claim that the raw C^(0,1/2) PG metric has a classical distributional Riemann tensor.",
+  "assumptions": [
+    "static spherical unit-lapse PG form",
+    "continuous piecewise-C2 w=2 m_MS with w(R)=0 and finite jump [w']",
+    "smooth horizon-free approximants with w_epsilon -> w in W^(1,1)_loc",
+    "a fixed sign branch with beta_epsilon -> beta locally uniformly",
+    "uniform local total variation of w_epsilon'",
+    "unit-mass smooth mollifiers in the invariant areal-radius collar"
+  ],
+  "symbolic": {
+    "checks": {
+      "correct_pg_diagonalization_sign": true,
+      "wrong_diagonalization_sign_rejected": true,
+      "direct_pg_mixed_einstein_tensor_exact": true,
+      "direct_pg_off_diagonal_components_zero": true,
+      "direct_pg_volume_density_exact": true,
+      "israel_and_reduced_surface_coefficients_match": true,
+      "square_root_regularity_and_gt_log_divergence": true,
+      "one_percent_jump_mutation_rejected": true,
+      "zero_jump_removes_surface_layer": true,
+      "reversed_jump_reverses_surface_pressure": true
+    },
+    "transformed_metric": "Matrix([[beta**2 - 1, 0], [0, -1/(beta**2 - 1)]])",
+    "wrong_sign_cross_term": "-2*beta",
+    "direct_pg_mixed_einstein_tensor": "Matrix([[-(2*r_pg*Derivative(beta_pg(r_pg), r_pg) + beta_pg(r_pg))*beta_pg(r_pg)/r_pg**2, 0, 0, 0], [0, -(2*r_pg*Derivative(beta_pg(r_pg), r_pg) + beta_pg(r_pg))*beta_pg(r_pg)/r_pg**2, 0, 0], [0, 0, -(r_pg*beta_pg(r_pg)*Derivative(beta_pg(r_pg), (r_pg, 2)) + r_pg*Derivative(beta_pg(r_pg), r_pg)**2 + 2*beta_pg(r_pg)*Derivative(beta_pg(r_pg), r_pg))/r_pg, 0], [0, 0, 0, -(r_pg*beta_pg(r_pg)*Derivative(beta_pg(r_pg), (r_pg, 2)) + r_pg*Derivative(beta_pg(r_pg), r_pg)**2 + 2*beta_pg(r_pg)*Derivative(beta_pg(r_pg), r_pg))/r_pg]])",
+    "israel_pressure": "-J/(16*pi*R)",
+    "rho_plus": "J/(8*pi*R**2)",
+    "beta_holder_coefficient": "sqrt(J)/sqrt(R)",
+    "beta_prime_square_log_coefficient": "J/(4*R)",
+    "time_map_second_derivative_coefficient": "sqrt(J)/(2*sqrt(R))"
+  },
+  "weak_limit": {
+    "checks": {
+      "three_mollifiers_normalized_and_positive": true,
+      "surface_measure_converges_for_all_test_functions": true,
+      "rho_and_pr_have_no_delta_measure": true,
+      "all_surface_errors_contract": true,
+      "unnormalized_mollifier_mutation_rejected": true
+    },
+    "R": 2.0,
+    "jump": 0.7,
+    "rho_plus_at_R": 0.006963028760270421,
+    "israel_surface_pressure": -0.006963028760270421,
+    "expected_densitized_surface_pairing": -0.35,
+    "epsilon_ladder": [
+      0.12,
+      0.06,
+      0.03,
+      0.015,
+      0.0075
+    ],
+    "max_final_surface_relative_error": 0.0002851936674630462,
+    "max_final_bulk_step_excess": 0.00014557754860226372,
+    "worst_error_reduction": 11.461308366850917,
+    "mollifiers": [
+      {
+        "mollifier": "standard_even_bump",
+        "normalization": 1.0000000000000002,
+        "first_moment": 0.0,
+        "second_moment": 0.15811363626379832,
+        "tests": {
+          "constant": {
+            "surface_pairings": [
+              -0.35000000000000014,
+              -0.35000000000000014,
+              -0.35000000000000003,
+              -0.35000000000000003,
+              -0.35000000000000014
+            ],
+            "surface_relative_errors": [
+              4.758098676964956e-16,
+              4.758098676964956e-16,
+              1.5860328923216522e-16,
+              1.5860328923216522e-16,
+              4.758098676964956e-16
+            ],
+            "bulk_step_excesses": [
+              9.675593659608239e-17,
+              4.837796829804119e-17,
+              2.4188984149020596e-17,
+              1.2094492074510298e-17,
+              6.047246037255149e-18
+            ],
+            "error_reduction": 1.0
+          },
+          "tilted_gaussian": {
+            "surface_pairings": [
+              -0.34952253648879383,
+              -0.34988050813565214,
+              -0.3499701191511144,
+              -0.34999252929496866,
+              -0.34999813229293947
+            ],
+            "surface_relative_errors": [
+              0.0013641814605889837,
+              0.00034140532670812185,
+              8.537385395872883e-05,
+              2.134487151805864e-05,
+              5.3363058871713775e-06
+            ],
+            "bulk_step_excesses": [
+              7.955488697364348e-05,
+              1.991390985036917e-05,
+              4.980053878245057e-06,
+              1.245112029310262e-06,
+              3.112841678370274e-07
+            ],
+            "error_reduction": 255.64154106467407
+          },
+          "oscillatory": {
+            "surface_pairings": [
+              -0.34993626934442223,
+              -0.3499840634431981,
+              -0.3499960156174757,
+              -0.349999003889161,
+              -0.3499997509713398
+            ],
+            "surface_relative_errors": [
+              0.0001820875873649795,
+              4.553301943393302e-05,
+              1.1383950069435553e-05,
+              2.8460309685142604e-06,
+              7.115104576944326e-07
+            ],
+            "bulk_step_excesses": [
+              9.559020242022596e-17,
+              4.837796829804119e-17,
+              2.44804176929847e-17,
+              1.224020884649235e-17,
+              6.120104423246175e-18
+            ],
+            "error_reduction": 255.91695160042102
+          },
+          "rational": {
+            "surface_pairings": [
+              -0.34976127760135306,
+              -0.3499402546646268,
+              -0.34998505961304543,
+              -0.3499962646498303,
+              -0.34999906614661647
+            ],
+            "surface_relative_errors": [
+              0.0006820639961340509,
+              0.0001707009582090675,
+              4.2686819870122304e-05,
+              1.0672429056216412e-05,
+              2.668152524317894e-06
+            ],
+            "bulk_step_excesses": [
+              9.675593659608239e-17,
+              4.837796829804119e-17,
+              2.389755060505649e-17,
+              1.2094492074510298e-17,
+              6.047246037255149e-18
+            ],
+            "error_reduction": 255.63156150843315
+          }
+        }
+      },
+      {
+        "mollifier": "sharper_even_bump",
+        "normalization": 1.0000000000000002,
+        "first_moment": 0.0,
+        "second_moment": 0.09823737744755748,
+        "tests": {
+          "constant": {
+            "surface_pairings": [
+              -0.35,
+              -0.35,
+              -0.35,
+              -0.35000000000000003,
+              -0.35
+            ],
+            "surface_relative_errors": [
+              0.0,
+              0.0,
+              0.0,
+              1.5860328923216522e-16,
+              0.0
+            ],
+            "bulk_step_excesses": [
+              6.644684802381561e-17,
+              3.3223424011907805e-17,
+              1.6611712005953903e-17,
+              8.305856002976951e-18,
+              4.152928001488476e-18
+            ],
+            "error_reduction": 1.0
+          },
+          "tilted_gaussian": {
+            "surface_pairings": [
+              -0.3497032013920014,
+              -0.34992574950392047,
+              -0.34998143419589717,
+              -0.3499953583501827,
+              -0.3499988395751206
+            ],
+            "surface_relative_errors": [
+              0.0008479960228530941,
+              0.0002121442745128821,
+              5.304515457945794e-05,
+              1.326185662080854e-05,
+              3.3154996552970625e-06
+            ],
+            "bulk_step_excesses": [
+              4.9457404538121356e-05,
+              1.2374517469836475e-05,
+              3.0942653452556283e-06,
+              7.736060940287878e-07,
+              1.9340400850845898e-07
+            ],
+            "error_reduction": 255.76718775955214
+          },
+          "oscillatory": {
+            "surface_pairings": [
+              -0.34996039906464993,
+              -0.34999009819582527,
+              -0.3499975244508056,
+              -0.3499993811065669,
+              -0.3499998452762583
+            ],
+            "surface_relative_errors": [
+              0.00011314552957156618,
+              2.829086907058758e-05,
+              7.07299769816697e-06,
+              1.7682669515929817e-06,
+              4.420678332918625e-07
+            ],
+            "bulk_step_excesses": [
+              6.761258219967203e-17,
+              3.3806291099836016e-17,
+              1.719457909388211e-17,
+              8.451572774959004e-18,
+              4.152928001488476e-18
+            ],
+            "error_reduction": 255.94608123605573
+          },
+          "rational": {
+            "surface_pairings": [
+              -0.34985160450455977,
+              -0.34996287499323014,
+              -0.3499907171130786,
+              -0.3499976791760378,
+              -0.34999941978761945
+            ],
+            "surface_relative_errors": [
+              0.00042398712982917786,
+              0.00010607144791381046,
+              2.6522534061054364e-05,
+              6.630925606218189e-06,
+              1.6577496586567264e-06
+            ],
+            "bulk_step_excesses": [
+              6.761258219967203e-17,
+              3.438915818776422e-17,
+              1.6903145549918008e-17,
+              8.451572774959004e-18,
+              4.225786387479502e-18
+            ],
+            "error_reduction": 255.76064975500245
+          }
+        }
+      },
+      {
+        "mollifier": "tilted_positive_bump",
+        "normalization": 1.0000000000000002,
+        "first_moment": 0.0553397726923294,
+        "second_moment": 0.15811363626379826,
+        "tests": {
+          "constant": {
+            "surface_pairings": [
+              -0.351162135226539,
+              -0.3505810676132695,
+              -0.3502905338066348,
+              -0.3501452669033174,
+              -0.35007263345165873
+            ],
+            "surface_relative_errors": [
+              0.0033203863615400525,
+              0.0016601931807701056,
+              0.0008300965903851321,
+              0.00041504829519256603,
+              0.00020752414759644163
+            ],
+            "bulk_step_excesses": [
+              0.0023242704530777192,
+              0.0011621352265388596,
+              0.0005810676132694298,
+              0.0002905338066347149,
+              0.00014526690331735745
+            ],
+            "error_reduction": 15.999999999985478
+          },
+          "tilted_gaussian": {
+            "surface_pairings": [
+              -0.35114404239847347,
+              -0.3506933162403736,
+              -0.3503767806258678,
+              -0.35019589222669234,
+              -0.35009981778361204
+            ],
+            "surface_relative_errors": [
+              0.0032686925670671095,
+              0.001980903543924598,
+              0.0010765160739080659,
+              0.0005596920762638925,
+              0.0002851936674630462
+            ],
+            "bulk_step_excesses": [
+              0.002401211902664401,
+              0.001181722134258712,
+              0.0005860067817932196,
+              0.00029177380767938344,
+              0.00014557754860226372
+            ],
+            "error_reduction": 11.461308366850917
+          },
+          "oscillatory": {
+            "surface_pairings": [
+              -0.35109795615310624,
+              -0.35056507498644285,
+              -0.3502865424148012,
+              -0.3501442699162973,
+              -0.3500723843134752
+            ],
+            "surface_relative_errors": [
+              0.0031370175803036027,
+              0.0016144999612653446,
+              0.0008186926137178561,
+              0.00041219976084956,
+              0.00020681232421493334
+            ],
+            "bulk_step_excesses": [
+              0.002323971457229978,
+              0.0011620978449405253,
+              0.0005810629403472077,
+              0.0002905332225124859,
+              0.00014526683030186151
+            ],
+            "error_reduction": 15.168426698997889
+          },
+          "rational": {
+            "surface_pairings": [
+              -0.3509217337058869,
+              -0.35052111209186687,
+              -0.35027556713716457,
+              -0.3501415282675435,
+              -0.35007169918756553
+            ],
+            "surface_relative_errors": [
+              0.0026335248739626864,
+              0.0014888916910482664,
+              0.0007873346776131132,
+              0.00040436647869584216,
+              0.00020485482161587093
+            ],
+            "bulk_step_excesses": [
+              0.0023231501974024017,
+              0.0011619950761765409,
+              0.0005810500907686833,
+              0.0002905316162062841,
+              0.00014526662951018336
+            ],
+            "error_reduction": 12.855566948289278
+          }
+        }
+      }
+    ]
+  },
+  "direct_beta_regularization": {
+    "checks": {
+      "direct_beta_flat_step_has_unit_jump_mass": true,
+      "direct_beta_flat_step_has_uniform_bv_bound": true,
+      "direct_beta_w11_convergence": true,
+      "direct_beta_uniform_convergence": true,
+      "direct_beta_horizon_margin": true,
+      "direct_beta_surface_measure_converges": true
+    },
+    "epsilon_ladder": [
+      0.06,
+      0.03,
+      0.015,
+      0.0075,
+      0.00375
+    ],
+    "kernel_mass": 0.9999999999999964,
+    "kernel_total_variation": 4.130399341762967,
+    "w11_errors": [
+      0.031835973940764976,
+      0.015917986970382488,
+      0.007958993485191244,
+      0.003979496742595622,
+      0.001989748371297811
+    ],
+    "w11_error_reduction": 16.0,
+    "beta_c0_errors": [
+      0.06878516789396674,
+      0.04874620749326872,
+      0.03450710290433164,
+      0.024413799568621955,
+      0.017267976533778904
+    ],
+    "beta_c0_error_reduction": 3.9833947978451345,
+    "minimum_horizon_margin": 0.9796116504854369,
+    "surface_relative_errors": {
+      "constant": [
+        3.489272363107635e-15,
+        3.33066907387547e-15,
+        2.854859206178974e-15,
+        3.33066907387547e-15,
+        3.33066907387547e-15
+      ],
+      "tilted_gaussian": [
+        0.0008517367566864197,
+        0.0002067691240150081,
+        5.0907527438922736e-05,
+        1.2627942527686034e-05,
+        3.1445665733225477e-06
+      ],
+      "oscillatory": [
+        0.00011104405982604554,
+        2.724640522089317e-05,
+        6.746857355180832e-06,
+        1.6785958340775105e-06,
+        4.186325676590132e-07
+      ],
+      "rational": [
+        0.000415964344836325,
+        0.00010214619441998149,
+        2.5298987480969008e-05,
+        6.294626775371626e-06,
+        1.569865423846549e-06
+      ]
+    },
+    "max_final_surface_relative_error": 3.1445665733225477e-06
+  },
+  "checks": {
+    "correct_pg_diagonalization_sign": true,
+    "wrong_diagonalization_sign_rejected": true,
+    "direct_pg_mixed_einstein_tensor_exact": true,
+    "direct_pg_off_diagonal_components_zero": true,
+    "direct_pg_volume_density_exact": true,
+    "israel_and_reduced_surface_coefficients_match": true,
+    "square_root_regularity_and_gt_log_divergence": true,
+    "one_percent_jump_mutation_rejected": true,
+    "zero_jump_removes_surface_layer": true,
+    "reversed_jump_reverses_surface_pressure": true,
+    "three_mollifiers_normalized_and_positive": true,
+    "surface_measure_converges_for_all_test_functions": true,
+    "rho_and_pr_have_no_delta_measure": true,
+    "all_surface_errors_contract": true,
+    "unnormalized_mollifier_mutation_rejected": true,
+    "direct_beta_flat_step_has_unit_jump_mass": true,
+    "direct_beta_flat_step_has_uniform_bv_bound": true,
+    "direct_beta_w11_convergence": true,
+    "direct_beta_uniform_convergence": true,
+    "direct_beta_horizon_margin": true,
+    "direct_beta_surface_measure_converges": true
+  },
+  "checks_passed": 21,
+  "checks_total": 21
+}

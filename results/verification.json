@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "symbolic_checks": {
+    "rho_from_mass_function": {
+      "passed": true,
+      "remainder": "0"
+    },
+    "radial_equation_of_state": {
+      "passed": true,
+      "remainder": "0"
+    },
+    "zero_energy_flux": {
+      "passed": true,
+      "remainder": "0"
+    },
+    "transverse_pressure_density_form": {
+      "passed": true,
+      "remainder": "0"
+    },
+    "transverse_pressure_mass_form": {
+      "passed": true,
+      "remainder": "0"
+    },
+    "transverse_nec_margin": {
+      "passed": true,
+      "remainder": "0"
+    },
+    "slope_form": {
+      "passed": true,
+      "remainder": "0"
+    }
+  },
+  "expressions": {
+    "rho": "(2*r*Derivative(beta(r), r) + beta(r))*beta(r)/(8*pi*r**2)",
+    "p_r": "-(2*r*Derivative(beta(r), r) + beta(r))*beta(r)/(8*pi*r**2)",
+    "p_perp": "-(r*beta(r)*Derivative(beta(r), (r, 2)) + r*Derivative(beta(r), r)**2 + 2*beta(r)*Derivative(beta(r), r))/(8*pi*r)",
+    "flux": "0",
+    "w": "r*beta(r)**2"
+  },
+  "numerical_profiles": {
+    "minimum_transverse_nec_smooth_hollow": -1.0294421984866615,
+    "minimum_transverse_nec_filled_monotone": 0.003968127659348243,
+    "grid_points": 30001,
+    "R1": 1.0,
+    "onset_width": 1.0,
+    "decay_length": 2.5,
+    "peak_radius": 1.8682186666666667,
+    "peak_density": 0.6934592364677504,
+    "weighted_onset_budget": -0.6934592242293418,
+    "expected_onset_budget": -0.6934592364495962,
+    "onset_budget_absolute_error": 1.2220254363981553e-08,
+    "minimum_depth_bound": 0.5547803557677246,
+    "observed_deficit_depth": 1.0294421984866615
+  },
+  "scope": "static spherical unit-lapse flat-slice radial-shift class"
+}

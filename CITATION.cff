@@ -9,10 +9,10 @@ authors:
     given-names: Gabriel
   - family-names: Vasilev
     given-names: Ivaylo
-version: 1.0.1
+version: "1.0.1"
 date-released: 2026-08-13
 repository-code: "https://github.com/AstrumDrive/hollow-core-energy-conditions-reproducibility"
-license: "NOASSERTION"
+url: "https://github.com/AstrumDrive/hollow-core-energy-conditions-reproducibility"
 keywords:
   - general relativity
   - spherical sources
